@@ -11,6 +11,10 @@ class Blog
       p.blog = self
     end
   end
+  
+  def add_entry(entry)
+    entries << entry
+  end
 
   def title
     "Watching Paint Dry"

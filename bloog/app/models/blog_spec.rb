@@ -3,8 +3,8 @@ require_relative "./blog"
 # require "ostruct"
 
 describe Blog do
-  subject { Blog.new } 
-  
+  subject { Blog.new }
+
   it "has no entries" do
     subject.entries.must_be_empty
   end
@@ -19,6 +19,14 @@ describe Blog do
     end
     it "sets the post’s blog reference to itself" do
       subject.new_post.blog.must_equal(subject)
+    end
+  end
+
+  describe "#add_entry" do
+    it "adds the entry to the blog" do
+      entry = Object.new 
+      subject.add_entry(entry) 
+      subject.entries.must_include(entry)
     end
   end
 end
