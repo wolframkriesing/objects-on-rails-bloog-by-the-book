@@ -1,11 +1,8 @@
 require 'rake/testtask'
 
-namespace 'test' do |_|
-  unit_test_files = FileList['app/models/*_spec.rb']
+task default: %w[test]
 
-  desc "Run unit tests"
-  Rake::TestTask.new('unit') do |t|
-    t.test_files = unit_test_files
-    t.verbose = true
-  end
+Rake::TestTask.new do |t|
+  t.test_files = FileList['app/**/*_spec.rb']
+  t.verbose = true
 end
