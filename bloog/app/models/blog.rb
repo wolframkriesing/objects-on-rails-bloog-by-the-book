@@ -6,6 +6,12 @@ class Blog
     @entries = []
   end
 
+  def new_post
+    post_source.call.tap do |p|
+      p.blog = self
+    end
+  end
+
   def title
     "Watching Paint Dry"
   end
