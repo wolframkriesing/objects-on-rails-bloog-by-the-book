@@ -1,4 +1,9 @@
 require "minitest/autorun"
+
+module ActiveModel 
+  module Naming; end 
+  module Conversion; end
+end
 require_relative "./post"
 
 describe Post do
