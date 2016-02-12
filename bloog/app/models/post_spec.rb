@@ -3,10 +3,9 @@ require "minitest/autorun"
 # this piece is also just added as in the PostController
 # only for form to render :(
 # for-form-only START
-module ActiveModel 
-  module Naming; end 
-  module Conversion; end
-end
+require_relative "../helpers/spec_helper_lite" 
+stub_module "ActiveModel::Conversion" 
+stub_module "ActiveModel::Naming"
 # for-form-only END
 require_relative "./post"
 
