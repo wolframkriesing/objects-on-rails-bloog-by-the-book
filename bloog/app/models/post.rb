@@ -8,6 +8,7 @@ class Post
   end
 
   def publish
+    self.pubdate = DateTime.now
     blog.add_entry(self)
   end
 
